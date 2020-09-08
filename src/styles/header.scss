@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70px;
+  padding-top: 20px;
+
+  grid-area: header;
+
+  .header__buttons {
+    margin-right: 30px;
+  }
+}

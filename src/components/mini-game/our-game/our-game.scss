@@ -1,0 +1,331 @@
+@import "../../../styles/mixins.scss";
+
+.our-game-wrapper {
+  height: 100vh;
+  text-align: center;
+  color: #263238;
+  .d-flex {
+    justify-content: center;
+  }
+  .btn-danger {
+    border-radius: 10px;
+    background: #a65447;
+    box-shadow: 12px 12px 24px #7d3f35, -12px -12px 24px #d06959;
+    border-color: #a65447;
+  }
+  .btn-success {
+    border-radius: 10px;
+    background: #ffa729;
+    box-shadow: 12px 12px 24px #bf7d1f, -12px -12px 24px #ffd133;
+    border-color: #ffa729;
+  }
+  .screen-green {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    animation: change-opacity 2s ease;
+    background: green;
+    z-index: 12;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .screen-red {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    animation: change-opacity 2s ease;
+    background: red;
+    z-index: 12;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes change-opacity {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .game-words {
+    .learn-word {
+      position: absolute;
+      font-size: 25px;
+      font-weight: bold;
+      border-radius: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: top 1s linear, left 1s linear;
+      padding: 10px;
+      border: 3px solid white;
+      color: white;
+    }
+    .learn-word-slide-red {
+      top: 10%;
+      left: 75%;
+    }
+    .learn-word-slide-green {
+      top: 10%;
+      left: 25%;
+    }
+  }
+  @media screen and(max-width:600px) {
+    .side-container {
+      font-size: 20px !important;
+    }
+  }
+  .side-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    background: #7d3f35;
+    @media screen and (max-width: 600px) {
+      .word-red {
+        word-break: break-word;
+      }
+      .word-green {
+        word-break: break-word;
+      }
+    }
+
+    .side-btn {
+      position: absolute;
+      bottom: 34%;
+      font-size: 35px;
+      width: 100px;
+    }
+    .word-green {
+      margin-top: 100px;
+      padding: 5px;
+    }
+    .word-red {
+      margin-top: 100px;
+      padding: 5px;
+    }
+    .our-side {
+      min-height: 100vh;
+      width: 37%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 20px;
+    }
+    .red-side {
+      background: #a65447;
+      border-radius: 100px 0px 0px 100px;
+    }
+    .green-side {
+      background: #ffa729;
+      border-radius: 0px 100px 100px 0px;
+    }
+  }
+  .content-true {
+    border-bottom: 2px solid;
+  }
+  .content-false {
+    margin-top: 30px;
+  }
+  .level-difficulty {
+    font-size: 2.4rem;
+  }
+  #play-btn {
+    margin-left: 11px;
+    padding: 1px 6px;
+    color: #ffffff;
+  }
+  #srart-btn {
+    margin: 10px;
+  }
+  .btn-next-menu {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5rem;
+  }
+  span {
+    margin-right: 5px;
+  }
+  .list-group {
+    width: 60%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem;
+    font-size: 1.8rem;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.04);
+    border-radius: 28px;
+    background-color: #ffffff;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    .btn_small {
+      padding: 0.8rem 3rem;
+    }
+  }
+  .list-group-item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    transform: translate(-50%, -50%);
+  }
+  .spinner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .timer-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    @media screen and (max-width: 550px) {
+      .base-timer {
+        width: 170px !important ;
+      }
+      .base-timer__label {
+        width: 170px !important;
+        height: 165px !important;
+      }
+    }
+    .base-timer {
+      position: relative;
+      height: 300px;
+      width: 300px;
+    }
+
+    .base-timer__svg {
+      transform: scaleX(-1);
+    }
+
+    .base-timer__circle {
+      fill: none;
+      stroke: none;
+    }
+
+    .base-timer__path-elapsed {
+      stroke-width: 7px;
+      stroke: #c3beba;
+    }
+    .base-timer__path-remaining {
+      stroke-width: 7px;
+      stroke-linecap: round;
+      transform: rotate(90deg);
+      transform-origin: center;
+      transition: 1s linear all;
+      stroke: #7a6e6c;
+    }
+
+    .base-timer__label {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 48px;
+    }
+  }
+  .spinner-border {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+    cursor: pointer;
+  }
+  .block {
+    background-color: grey;
+    cursor: not-allowed;
+  }
+
+  .btn {
+    display: block;
+  }
+  .dropdown {
+    display: flex;
+    cursor: pointer;
+  }
+  .dropdown:first-child {
+    .btn_dropdown {
+      margin-right: 20px;
+    }
+  }
+  .dropdown-menu {
+    max-height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  .info {
+    text-align: center;
+    font-size: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 30px;
+    color: #263238;
+    margin-bottom: 50px;
+    .info-arrow {
+      font-size: 35px;
+    }
+  }
+}
+
+@include mobile() {
+  .our-game-wrapper {
+    .list-group {
+      width: 90%;
+      font-size: 1.6rem;
+    }
+    .side-container {
+      .our-side {
+        width: 50%;
+      }
+      .red-side {
+        border-radius: 200px 0 0 200px;
+      }
+      .green-side {
+        border-radius: 0 200px 200px 0;
+      }
+      .side-btn {
+        bottom: 25%;
+      }
+    }
+    .btn-next-menu {
+      button {
+        font-size: 1.2rem;
+        padding: 0.8rem 3rem;
+      }
+      button:first-child {
+        margin-right: 20px;
+      }
+    }
+    .timer-container {
+      top: 100%;
+    }
+    .game-words {
+      .learn-word {
+        top: 10%;
+      }
+    }
+  }
+}
+
+@include tablet() {
+  .our-game-wrapper {
+    .list-group {
+      width: 80%;
+    }
+  }
+}

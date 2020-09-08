@@ -1,0 +1,9 @@
+[{ "name": "Алексей Беленко", "description": "GOOD", "img": "./img/lesha_b.jpg" },
+    { "name": "Алексей Радюк", "description": "GOOD", "img": "./img/lesha_r.jpg" },
+    { "name": "Глеб Жидович", "description": "GOOD", "img": "./img/gleb.jpg" },
+    { "name": "Анна Каледа", "description": "GOOD", "img": "./img/anya.jpg" },
+    { "name": "Геннадий Бакулин", "description": "GOOD", "img": "./img/gennady.jpg" },
+    { "name": "Ксения Никитина", "description": "GOOD", "img": "./img/ksenia.jpg" },
+    { "name": "Сергей Зылевич", "description": "GOOD", "img": "./img/sergey.jpg" }
+]
+

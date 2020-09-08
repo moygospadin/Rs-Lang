@@ -1,0 +1,151 @@
+@import "./mixins.scss";
+
+.menu {
+  width: 70px;
+  height: 100%;
+
+  background-color: #fff;
+  box-shadow: 8px 0px 20px rgba(0, 0, 0, 0.04);
+
+  transition: width 0.2s linear;
+
+  grid-area: menu;
+
+  .menu__burger {
+    display: flex;
+    height: 70px;
+
+    .burger-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 20px;
+      cursor: pointer;
+
+      .burger-dash {
+        width: 30px;
+        height: 4px;
+        margin: 3px;
+
+        background-color: #A6A6A6;
+        border-radius: 2px;
+
+        transition: transform 0.5s;
+      }
+    }
+  }
+
+  .menu__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 500px;
+
+    .menu__item.active {
+      background-color: #FFDD64;
+      margin: 0;
+      padding: 20px;
+      .menu-item__label {
+        text-decoration: none;
+      }
+    }
+    .menu__item {
+      display: flex;
+      height: 48px;
+      margin: 0 20px;
+      align-items: center;
+
+      .menu-item__label {
+        color: #A6A6A6;
+        margin-left: 15px;
+        opacity: 0;
+        align-self: center;
+        font-size: 1.4rem;
+      }
+
+      svg {
+        width: 30px;
+        height: 30px;
+        fill: #A6A6A6;
+      }
+    }
+  }
+
+  .menu__item.active {
+    .menu-item__label {
+      color: #263238;
+    }
+    svg {
+      fill: #263238;
+    }
+  }
+
+  .menu__item:hover {
+      text-decoration: none;
+    .menu-item__label {
+      color: #263238;
+    }
+    svg {
+      fill: #263238;
+    }
+  }
+}
+
+.menu.active {
+  width: 250px;
+  .menu__item {
+    display: flex;
+
+    .menu-item__label {
+      opacity: 1;
+      transition: opacity 1.3s;
+    }
+  }
+
+  .menu__item.active {
+    .menu-item__label {
+      color: #263238;
+    }
+    svg {
+      fill: #263238;
+    }
+  }
+
+  .menu__burger {
+    .burger-icon {
+      margin: 0px 10px;
+
+      div:nth-child(1) {
+        transform: rotate(-45deg) translate( 1px , 9px);
+      }
+
+      div:nth-child(2) {
+        opacity: 0;
+      }
+
+      div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px,-15px);
+      }
+    }
+  }
+}
+
+
+@include tablet() {
+  .menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+  }
+}
+
+@include mobile() {
+  .menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+  }
+}

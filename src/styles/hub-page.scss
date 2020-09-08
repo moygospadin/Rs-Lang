@@ -1,0 +1,208 @@
+@import "./mixins.scss";
+
+.hub {
+  display: grid;
+
+  grid-template-areas:
+    "menu header"
+    "menu hub-page";
+  grid-template-columns: max-content;
+
+  .hub-page {
+    margin: 0 20px;
+
+    .hub__wrapper {
+      display: grid;
+      max-width: 1020px;
+      margin: auto;
+
+      grid-area: hub-page;
+      div {
+        margin-top: 20px;
+      }
+      .hub__main-blocks {
+        display: flex;
+        .hub__main-block {
+          background: #ffffff;
+          padding: 3rem;
+          display: flex;
+          width: 50%;
+          box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.04);
+          border-radius: 28px;
+          align-items: center;
+          .image {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            img {
+              max-width: 200px;
+              height: auto;
+              width: 100%;
+            }
+          }
+          .description {
+            width: 50%;
+            text-align: right;
+            p {
+              font-size: 2rem;
+              line-height: 3.2rem;
+              margin-bottom: 40px;
+            }
+            a {
+              padding: 1rem 4rem;
+            }
+          }
+        }
+        .hub__main-block:first-child {
+          margin-right: 3rem;
+        }
+      }
+      .hub__user-info {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-weight: 600;
+        font-size: 3rem;
+      }
+      .current-info__words {
+        display: flex;
+
+        p {
+          padding: 20px;
+          box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.04);
+          border-radius: 28px;
+          background-color: #ffffff;
+          font-size: 2rem;
+          text-align: center;
+          margin-right: 20px;
+          width: calc(33.33333% - 20px);
+          span {
+            color: #ffc727;
+            font-weight: 600;
+            font-size: 4rem;
+          }
+        }
+        p:last-child{
+          margin-right: 0;
+        }
+      }
+      .hub__info_total {
+        display: flex;
+        box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.04);
+        border-radius: 28px;
+        background-color: #ffffff;
+        align-items: center;
+        margin-bottom: 30px;
+        background-image: url("../assets//images/hub-3.png");
+        background-size: cover;
+        .description {
+          width: 40%;
+          text-align: center;
+          font-size: 3rem;
+          .title {
+            font-weight: 600;
+          }
+          span {
+            color: #ffc727;
+            font-weight: 600;
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet() {
+  .hub {
+    grid-template-areas:
+      "header"
+      "hub-page";
+    grid-template-columns: auto;
+    .hub-page {
+      .hub__wrapper {
+        margin-left: 80px;
+
+        .hub__main-blocks {
+          .hub__main-block {
+            flex-direction: column;
+            .image {
+              min-height: 145px;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              img {
+                margin: 0 auto;
+              }
+            }
+            .description {
+              width: 100%;
+              text-align: center;
+            }
+          }
+          .hub__main-block:first-child {
+            margin-right: 3rem;
+          }
+        }
+        .current-info__words {
+          p {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .hub {
+    grid-template-areas:
+    "header"
+    "hub-page";
+    grid-template-columns: auto;
+
+    .hub-page {
+      .hub__wrapper {
+        margin-left: 80px;
+
+        .hub__main-blocks {
+          flex-direction: column;
+          .hub__main-block {
+            flex-direction: column;
+            width: 100%;
+            .image {
+              text-align: center;
+              display: flex;
+              align-items: center;
+              img {
+                margin: 0 auto;
+              }
+            }
+            .description {
+              width: 100%;
+              text-align: center;
+            }
+          }
+          .hub__main-block:first-child {
+            margin-right: 3rem;
+          }
+        }
+        .current-info__words {
+          flex-direction: column;
+          p {
+            margin-right: 0;
+            padding: 10px;
+            width: 100%;
+          }
+        }
+        .hub__info_total {
+
+        .description {
+          width: 100%;
+        }
+      }
+      }
+    }
+  }
+}

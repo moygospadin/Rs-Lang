@@ -1,0 +1,165 @@
+@import '../mixins.scss';
+
+.speak-it {
+  position: relative;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  &__active {
+    border: 7px solid #aa2233;
+
+    &:hover {
+      border: 7px solid #aa2233;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &-pages,
+    &-groups {
+      margin: 10px;
+    }
+
+    &-level {
+      display: flex;
+    }
+
+    &-app {
+      &__btn {
+        margin: 10px;
+      }
+      display: flex;
+      align-items: center;
+    }
+    .dropdown-item{
+      font-size: 1.4rem;
+    }
+    .dropdown-item:active {
+      background: #ffc727;
+    }
+  }
+
+  &__content {
+    &-info {
+      width: 300px;
+      height: auto;
+      margin: 40px auto;
+
+      &__img {
+        width: 100%;
+
+        &-input,
+        &-score,
+        &-title {
+          font-weight: bold;
+          font-size: 20px;
+          text-align: center;
+        }
+      }
+    }
+
+    &-words {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 40px;
+
+      @media screen and (min-width: 1150px) {
+        width: 1130px;
+      }
+    }
+
+    &-word__item {
+      position: relative;
+
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      align-items: center;
+      width: fit-content;
+      min-width: 200px;
+      margin: 5px;
+      padding: 5px;
+
+      font-size: 25px;
+      text-align: center;
+      color: #ffffff;
+
+      background-color: #6c757d;
+      border: 7px solid #6c757d;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: #50565c;
+      }
+
+      &-select {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &__level,
+  &__page {
+    height: 210px;
+    overflow: auto;
+
+    cursor: pointer;
+  }
+
+  &__correct {
+    border: 7px solid green;
+  }
+}
+
+@include tablet-and-mobile() {
+  .speak-it {
+    &__controls {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__content {
+    &-info {
+      height: auto;
+      margin: 40px auto 0;
+    }
+    }
+  }
+}
+
+@include mobile(){
+  .speak-it {
+    &__controls {
+      flex-direction: column;
+      align-items: center;
+      &-app{
+justify-content: center;
+      flex-wrap: wrap;
+      }
+    }
+    &__content{
+      &-word__item{
+        width: calc(50% - 10px);
+min-width: unset;
+font-size: 1.4rem;
+      }
+    }
+    &__content-info{
+      &__img{
+        display: none;
+      }
+    }
+    &__content-words{
+      padding-top: 0;
+    }
+  }
+}

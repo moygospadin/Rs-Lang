@@ -1,0 +1,116 @@
+@import "./mixins.scss";
+
+.vocabulary-page {
+    display: grid;
+
+    grid-template-areas: "menu header"
+    "menu vocabulary";
+    grid-template-columns: max-content;
+    min-height: 100vh;
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    .vocabulary__wrapper {
+        grid-area: vocabulary;
+        display: grid;
+        max-width: 1400px;
+        margin: 30px auto;
+
+        .vocabulary__buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+
+            .vocabulary__btn {
+                margin: 0 20px;
+            }
+        }
+
+        .vocabulary__tab {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+
+            .vocabulary__word {
+                padding: 20px;
+                border-radius: 10px;
+                background-color: #FFFFFF;
+                border-radius: 2rem;
+                margin: 1rem;
+
+                .word__block {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    margin-bottom: 10px;
+
+                    .word__audio {
+                        width: 40px;
+                        height: 40px;
+                        background-color: #FFDD64;
+                        box-shadow: 0px 4px 12px #FFDD64;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 5px;
+                        svg {
+                            height: 30px;
+                            width: 30px;
+                            fill: #000;
+                        }
+                    }
+                    .word__audio:hover {
+                        transition: 0.2s;
+                        background-color: #FFC727;
+                        box-shadow: 0px 4px 12px #FFC727;
+                        svg {
+                            fill: #FFF;
+                        }
+                    }
+                    .word__name {
+                        p {
+                            margin: 0;
+                            font-size: 20px;
+                            font-weight: 900;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .voc__progress-bar {
+                    height: 15px;
+                    border-radius: 3px;
+                    background-color: #ebebeb;
+                    margin: 20px auto;
+                }
+
+                .word__image {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 10px;
+
+                    img {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+@include tablet-and-mobile() {
+    .vocabulary-page {
+        .vocabulary__wrapper {
+            margin: 0 10px 0 80px;
+            .vocabulary__tab {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+
+

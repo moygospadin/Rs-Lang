@@ -1,0 +1,157 @@
+@import "../../styles/mixins.scss";
+
+.settings__wrapper {
+  display: grid;
+  grid-template-areas: "menu header"
+  "menu settings";
+  grid-template-columns: max-content;
+  height: 100vh;
+
+  .settings {
+    grid-area: settings;
+    h1{
+      font-size: 3rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.limits {
+  display: flex;
+  .limit {
+    label {
+      margin-right: 10px;
+      font-size: 1.6rem;
+    }
+    input {
+      vertical-align: middle;
+
+      cursor: pointer;
+    }
+    output {
+      min-width: 35px;
+      margin-left: 10px;
+      font-size: 1.6rem;
+    }
+  }
+  .limit:first-child {
+    margin-right: 30px;
+  }
+}
+
+.main-settings {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  label{
+    font-size: 1.6rem;
+  }
+  p{
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  p:first-child {
+    margin-top: 10px;
+  }
+  .warning {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-weight: 700;
+    color: red;
+  }
+}
+
+.additional-settings {
+  display: flex;
+  flex-direction: column;
+  label{
+    font-size: 1.6rem;
+  }
+  p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+  }
+  .success-notification {
+    margin-bottom: 0;
+
+    font-weight: 700;
+    color: green;
+  }
+}
+
+
+.save-btn {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+@include tablet() {
+  .settings__wrapper {
+    display: grid;
+    grid-template-areas: "header"
+    "settings";
+    grid-template-columns: auto;
+
+    .settings {
+      margin-left: 80px;
+    }
+  }
+}
+@include mobile() {
+  .settings__wrapper {
+    display: grid;
+    grid-template-areas: "header"
+    "settings";
+    grid-template-columns: auto;
+
+    .settings {
+      margin-left: 80px;
+    }
+  }
+  .limits {
+    .limit {
+      label {
+        font-size: 13px;
+      }
+    }
+  }
+  .main-settings,
+  .additional-settings {
+    font-size: 14px;
+    p:first-child {
+      font-size: 18px;
+    }
+  }
+  .success-notification,
+  .warning {
+    text-align: center;
+  }
+  .save-btn-container {
+    text-align: center;
+  }
+}
+
+@include tablet() {
+  .settings__wrapper {
+    padding: 0;
+    .settings {
+      max-width: 700px;
+      padding: 0;
+    }
+  }
+}
+
+@include mobile() {
+  .settings__wrapper {
+    padding: 0;
+    .settings {
+      max-width: 300px;
+      padding: 0;
+    }
+  }
+}
